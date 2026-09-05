@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-labelledby="title desc">
+  <title id="title">Ashwath Fresh</title>
+  <desc id="desc">Ashwath Fresh fruits, vegetables and groceries</desc>
+  <defs>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d7a32"/>
+      <stop offset="1" stop-color="#06451f"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="220" rx="28" fill="#fffdf2"/>
+  <path d="M76 116C42 74 69 27 125 20c-4 51-22 80-49 96Z" fill="url(#leaf)"/>
+  <path d="M78 112c18-26 35-49 68-67" fill="none" stroke="#f2c94c" stroke-width="5" stroke-linecap="round"/>
+  <path d="M84 130c24 10 39 29 44 55-36-7-55-24-57-56Z" fill="#58a52c"/>
+  <text x="154" y="111" fill="#075526" font-family="Georgia, serif" font-size="65" font-weight="700">Ashwath Fresh</text>
+  <text x="158" y="153" fill="#62351f" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">FRUITS  •  VEGETABLES  •  GROCERIES</text>
+  <path d="M154 174h420" stroke="#d99d27" stroke-width="5" stroke-linecap="round"/>
+  <text x="158" y="198" fill="#075526" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="3">FRESHNESS BRINGS HAPPINESS</text>
+</svg>
