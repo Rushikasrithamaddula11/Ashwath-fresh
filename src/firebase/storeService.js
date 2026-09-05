@@ -60,12 +60,11 @@ const markProductDeleted = (productId) => {
   setLocalData(STORAGE_KEYS.DELETED_PRODUCTS, [...deletedIds]);
 };
 
-// Keep the core storefront catalogue available even when an older Firebase
-// collection already exists. Seed records take precedence for matching IDs so
-// category moves (such as Fruits and Vegetables) are reflected immediately.
+// Keep the core storefront catalogue available when Firebase has not received
+// one of the default records yet, while letting saved Firebase data win.
 const mergeWithDefaultRecords = (defaults, records) => {
-  const defaultIds = new Set(defaults.map((record) => record.id));
-  return [...defaults, ...records.filter((record) => !defaultIds.has(record.id))];
+  const recordIds = new Set(records.map((record) => record.id));
+  return [...records, ...defaults.filter((record) => !recordIds.has(record.id))];
 };
 
 const getStorefrontCategories = (records) =>
