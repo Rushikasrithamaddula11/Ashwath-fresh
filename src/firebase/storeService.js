@@ -76,7 +76,7 @@ const getStorefrontProducts = (records) => {
   const deletedIds = getDeletedProductIds();
   return mergeWithDefaultRecords(INITIAL_PRODUCTS, records)
     .filter((product) => !['prod-combo-01', 'prod-juice-01', 'prod-dryfruit-01'].includes(product.id))
-    .filter((product) => !deletedIds.has(product.id));
+    .filter((product) => product.id === 'prod-palakova-01' || !deletedIds.has(product.id));
 };
 
 // ----------------------------------------------------

@@ -13,7 +13,7 @@ export const INITIAL_PRODUCTS = [
     price: 130,
     unit: '250 grams',
     weight: '250g',
-    imageUrl: '/palakova.svg',
+    imageUrl: 'https://tse2.mm.bing.net/th/id/OIP.AITAls32RCWknz-fjXYYBgHaEK?r=0&pid=Api&P=0&h=180',
     stock: 50,
     featured: true,
     active: true,
