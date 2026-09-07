@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ShoppingBag, Zap, Check, ArrowLeft, ShieldCheck, Truck, Sparkles, Plus, Minus, AlertCircle } from 'lucide-react';
+import React, { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft, ShieldCheck, Truck, Sparkles, AlertCircle } from 'lucide-react';
 import { useData } from '../../context/DataContext';
-import { useCart } from '../../context/CartContext';
 import { formatCurrency } from '../../utils/formatters';
 import ProductCard from '../../components/product/ProductCard';
 
 export const ProductDetailPage = () => {
   const { id } = useParams();
   const { products } = useData();
-  const { addToCart } = useCart();
-  const navigate = useNavigate();
-  const [quantity, setQuantity] = useState(1);
-  const [added, setAdded] = useState(false);
 
   const product = products.find(p => p.id === id);
 
@@ -34,19 +29,6 @@ export const ProductDetailPage = () => {
 
   const isPalakova = product.name?.toLowerCase().includes('palakova') || product.category === 'Special Products';
   const isOutOfStock = product.stock <= 0;
-
-  const handleAddToCart = () => {
-    if (isOutOfStock) return;
-    addToCart(product, quantity);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1500);
-  };
-
-  const handleBuyNow = () => {
-    if (isOutOfStock) return;
-    addToCart(product, quantity);
-    navigate('/cart');
-  };
 
   const relatedProducts = products
     .filter(p => p.id !== product.id && p.active && (p.category === product.category || p.featured))
@@ -113,58 +95,6 @@ export const ProductDetailPage = () => {
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-2">
               {product.description || 'Harvested fresh for peak flavor and nutrition. Delivered directly with Cash on Delivery.'}
             </p>
-          </div>
-
-          {/* Quantity Picker & Action Buttons */}
-          <div className="space-y-4 pt-4 border-t border-slate-100">
-            <div className="flex items-center space-x-4">
-              <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Select Quantity:</span>
-              <div className="flex items-center border border-slate-200 rounded-xl bg-slate-50 p-1">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="p-1.5 hover:bg-white rounded-lg text-slate-700 transition-colors"
-                >
-                  <Minus className="w-4 h-4" />
-                </button>
-                <span className="w-12 text-center text-sm font-bold text-slate-900">{quantity}</span>
-                <button
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="p-1.5 hover:bg-white rounded-lg text-slate-700 transition-colors"
-                >
-                  <Plus className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                onClick={handleAddToCart}
-                disabled={isOutOfStock}
-                className={`py-3.5 px-4 rounded-2xl text-xs font-extrabold flex items-center justify-center space-x-2 transition-all ${
-                  added
-                    ? 'bg-emerald-800 text-white'
-                    : isOutOfStock
-                    ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                    : 'bg-emerald-50 text-emerald-800 hover:bg-emerald-600 hover:text-white border border-emerald-200'
-                }`}
-              >
-                {added ? <Check className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
-                <span>{added ? 'Added to Cart!' : 'Add to Cart'}</span>
-              </button>
-
-              <button
-                onClick={handleBuyNow}
-                disabled={isOutOfStock}
-                className={`py-3.5 px-4 rounded-2xl text-xs font-extrabold text-white flex items-center justify-center space-x-2 shadow-md transition-all ${
-                  isOutOfStock
-                    ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                    : 'bg-emerald-600 hover:bg-emerald-700'
-                }`}
-              >
-                <Zap className="w-4 h-4" />
-                <span>Buy Now</span>
-              </button>
-            </div>
           </div>
 
           {/* Features Strip */}

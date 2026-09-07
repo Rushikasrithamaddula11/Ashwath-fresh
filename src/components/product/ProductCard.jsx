@@ -1,38 +1,16 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ShoppingBag, Zap, Check, AlertCircle, Sparkles } from 'lucide-react';
-import { useCart } from '../../context/CartContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { AlertCircle, Sparkles } from 'lucide-react';
 import { formatCurrency } from '../../utils/formatters';
 
 export const ProductCard = ({ product }) => {
-  const { addToCart } = useCart();
-  const navigate = useNavigate();
-  const [added, setAdded] = useState(false);
-
   const isPalakova = product.name?.toLowerCase().includes('palakova') || product.category === 'Special Products';
   const isOutOfStock = product.stock <= 0;
-
-  const handleAddToCart = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (isOutOfStock) return;
-    addToCart(product, 1);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1500);
-  };
-
-  const handleBuyNow = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (isOutOfStock) return;
-    addToCart(product, 1);
-    navigate('/cart');
-  };
 
   return (
     <div className={`group bg-white rounded-3xl overflow-hidden border transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 ${
       isPalakova
-        ? 'border-amber-200 ring-2 ring-amber-400/20 bg-gradient-to-b from-amber-50/30 to-white'
+        ? 'border-amber-200 ring-2 ring-amber-400/20 bg-linear-to-b from-amber-50/30 to-white'
         : 'border-slate-100 hover:border-emerald-200'
     }`}>
       {/* Product Image Container */}
@@ -54,7 +32,7 @@ export const ProductCard = ({ product }) => {
             </span>
           )}
           {isPalakova && (
-            <span className="bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs flex items-center gap-1">
+            <span className="bg-linear-to-r from-amber-500 to-amber-600 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-xs flex items-center gap-1">
               <Sparkles className="w-3 h-3" /> Special Product
             </span>
           )}
@@ -112,46 +90,6 @@ export const ProductCard = ({ product }) => {
               ({product.weight})
             </span>
           )}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-2 mt-3 pt-1">
-          <button
-            onClick={handleAddToCart}
-            disabled={isOutOfStock}
-            className={`w-full py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-1.5 ${
-              added
-                ? 'bg-emerald-800 text-white'
-                : isOutOfStock
-                ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                : 'bg-emerald-50 text-emerald-800 hover:bg-emerald-600 hover:text-white border border-emerald-200'
-            }`}
-          >
-            {added ? (
-              <>
-                <Check className="w-3.5 h-3.5" />
-                <span>Added!</span>
-              </>
-            ) : (
-              <>
-                <ShoppingBag className="w-3.5 h-3.5" />
-                <span>Add to Cart</span>
-              </>
-            )}
-          </button>
-
-          <button
-            onClick={handleBuyNow}
-            disabled={isOutOfStock}
-            className={`w-full py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center space-x-1 ${
-              isOutOfStock
-                ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                : 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs hover:shadow-md'
-            }`}
-          >
-            <Zap className="w-3.5 h-3.5" />
-            <span>Buy Now</span>
-          </button>
         </div>
 
       </div>

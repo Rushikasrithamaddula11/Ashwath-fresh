@@ -19,7 +19,7 @@ export const LoginPage = () => {
 
     try {
       const result = await login(email, password);
-      navigate(result.profile?.role === 'admin' ? '/admin' : location.state?.from || '/shop');
+      navigate(location.state?.from || '/shop');
     } catch (err) {
       console.error('Login error:', err);
       setErrorMsg(err.message || 'Failed to login. Please check email and password.');
@@ -36,7 +36,7 @@ export const LoginPage = () => {
             AF
           </div>
           <h1 className="text-2xl font-black text-slate-900">Account Login</h1>
-          <p className="text-xs text-slate-500">Sign in to shop, track orders, or manage the store</p>
+          <p className="text-xs text-slate-500">Sign in to shop and track your orders</p>
         </div>
 
         {errorMsg && (
