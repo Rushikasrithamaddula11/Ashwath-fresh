@@ -17,8 +17,8 @@ export const Footer = () => {
         </div>
         <div className="space-y-3 text-sm">
           <h2 className="font-bold uppercase tracking-wider text-white">Visit us</h2>
-          <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />{settings.address?.originLocation || 'Bairamalguda Hyderabad 500079'}</p>
-          <p className="flex items-start gap-2"><Building className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />{settings.address?.businessAddress || 'Bairamalguda Hyderabad 500079'}</p>
+          <p className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />{settings.address?.originLocation || 'Bairamalguda, Hyderabad 500079'}</p>
+          <p className="flex items-start gap-2"><Building className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />{settings.address?.businessAddress || 'Bairamalguda, Hyderabad 500079'}</p>
         </div>
         <div className="space-y-3 text-sm">
           <h2 className="font-bold uppercase tracking-wider text-white">Contact</h2>
