@@ -103,7 +103,7 @@ export const AdminSettingsPage = () => {
           <div className="bg-slate-50 p-4 rounded-2xl text-xs space-y-1 border border-slate-200/80">
             <span className="font-bold text-slate-900 block">Registered Store Address</span>
             <p className="text-slate-600 leading-relaxed">
-              <strong>Location:</strong> Tadakanapally, Kurnool<br />
+              <strong>Location:</strong> Bairamalguda, Hyderabad 500079<br />
               <strong>Address:</strong> Plot: 32, H.No: 7-2-32/P, Road No: 5, Durga Nagar, Bairamalguda, Hyderabad - 500079
             </p>
           </div>

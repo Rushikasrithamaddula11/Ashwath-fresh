@@ -29,6 +29,21 @@ const STORAGE_KEYS = {
 
 const STOREFRONT_CATEGORY_NAMES = new Set(['Fruits', 'Vegetables', 'Palakova']);
 
+const normalizeSettings = (settings) => {
+  const mergedSettings = {
+    ...INITIAL_SETTINGS,
+    ...settings,
+    address: {
+      ...INITIAL_SETTINGS.address,
+      ...(settings?.address || {})
+    }
+  };
+
+  mergedSettings.address.originLocation = INITIAL_SETTINGS.address.originLocation;
+
+  return mergedSettings;
+};
+
 // Helper to get local storage item or initialize
 const getLocalData = (key, initial) => {
   try {
@@ -367,13 +382,15 @@ export const getSettingsService = async () => {
       const docRef = doc(db, 'settings', 'store');
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
-        return { ...INITIAL_SETTINGS, ...docSnap.data() };
+        return normalizeSettings(docSnap.data());
       }
     } catch (e) {
       console.warn('Firestore fetch error for settings:', e);
     }
   }
-  return getLocalData(STORAGE_KEYS.SETTINGS, INITIAL_SETTINGS);
+  const settings = normalizeSettings(getLocalData(STORAGE_KEYS.SETTINGS, INITIAL_SETTINGS));
+  setLocalData(STORAGE_KEYS.SETTINGS, settings);
+  return settings;
 };
 
 export const saveSettingsService = async (settingsData) => {

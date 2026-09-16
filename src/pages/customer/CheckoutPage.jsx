@@ -19,8 +19,8 @@ export const CheckoutPage = () => {
     email: currentUser?.email || 'customer@ashwathfresh.com',
     houseNo: '',
     street: '',
-    area: 'Durga Nagar / Tadakanapally',
-    city: 'Hyderabad / Kurnool',
+    area: 'Durga Nagar',
+    city: 'Hyderabad',
     state: 'Telangana / AP',
     pincode: '500079',
     notes: ''
@@ -258,7 +258,7 @@ export const CheckoutPage = () => {
                   name="city"
                   value={formData.city}
                   onChange={handleChange}
-                  placeholder="Hyderabad / Kurnool"
+                  placeholder="Hyderabad"
                   className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:bg-white focus:border-emerald-500 focus:outline-none"
                 />
               </div>

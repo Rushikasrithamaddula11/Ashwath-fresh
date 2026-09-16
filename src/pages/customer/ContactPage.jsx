@@ -50,7 +50,7 @@ export const ContactPage = () => {
               <MapPin className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
               <div>
                 <strong className="block text-slate-900 text-sm">Origin Location</strong>
-                <span className="text-slate-600">Tadakanapally, Kurnool</span>
+                <span className="text-slate-600">Bairamalguda, Hyderabad 500079</span>
               </div>
             </div>
 

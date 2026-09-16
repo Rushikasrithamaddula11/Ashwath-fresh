@@ -8,7 +8,7 @@ export const INITIAL_PRODUCTS = [
   {
     id: 'prod-palakova-01',
     name: 'Ashwath Fresh Palakova',
-    description: 'Traditional authentic homemade milk sweet made with pure high-quality fresh milk and sugar. Rich, traditional taste directly from Tadakanapally.',
+    description: 'Traditional authentic homemade milk sweet made with pure high-quality fresh milk and sugar. Rich, traditional homemade taste.',
     category: 'Palakova',
     price: 130,
     unit: '250 grams',
@@ -673,7 +673,7 @@ export const INITIAL_SETTINGS = {
     city: 'Hyderabad',
     pincode: '500079',
     state: 'Telangana',
-    originLocation: 'Tadakanapally, Kurnool',
+    originLocation: 'Bairamalguda, Hyderabad 500079',
     fullAddress: 'Plot: 32, H.No: 7-2-32/P, Road No: 5, Durga Nagar, Bairamalguda, Hyderabad - 500079'
   },
   logoUrl: '',
@@ -731,8 +731,8 @@ export const INITIAL_SAMPLE_ORDERS = [
       phone: '9121445566',
       houseNo: 'H.No 12-4',
       street: 'Station Road',
-      area: 'Tadakanapally',
-      city: 'Kurnool',
+      area: 'Bairamalguda',
+      city: 'Hyderabad',
       pincode: '518002',
       notes: 'Deliver in evening'
     },

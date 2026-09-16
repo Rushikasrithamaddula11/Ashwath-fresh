@@ -15,7 +15,7 @@ export const Navbar = () => {
           <div className="hidden shrink-0 items-center gap-4 text-emerald-100 sm:flex">
             <span className="flex items-center gap-1">
               <MapPin className="h-3.5 w-3.5 text-emerald-300" />
-              {settings.address?.originLocation || 'Tadakanapally, Kurnool'}
+              {settings.address?.originLocation || 'Bairamalguda, Hyderabad 500079'}
             </span>
             <a href={`tel:${settings.phone || '9346763478'}`} className="flex items-center gap-1 font-medium hover:text-white">
               <PhoneCall className="h-3.5 w-3.5 text-amber-300" />

@@ -21,7 +21,7 @@ export const HomePage = () => {
   const palakovaProduct = {
     id: 'prod-palakova-01',
     name: 'Ashwath Fresh Palakova',
-    description: 'Traditional authentic homemade milk sweet made with pure high-quality fresh milk and sugar directly from Tadakanapally.',
+    description: 'Traditional authentic homemade milk sweet made with pure high-quality fresh milk and sugar, prepared with a rich homemade taste.',
     category: 'Palakova',
     price: 130,
     unit: '250 grams',
@@ -245,7 +245,7 @@ export const HomePage = () => {
               </h2>
 
               <p className="max-w-xl text-sm leading-relaxed text-emerald-50">
-                {palakovaProduct.description || 'Traditional authentic homemade milk sweet prepared with 100% pure fresh milk and natural sugar. Rich in heritage taste from Tadakanapally, Kurnool.'}
+                {palakovaProduct.description || 'Traditional authentic homemade milk sweet prepared with 100% pure fresh milk and natural sugar.'}
               </p>
 
               <div className="flex items-baseline space-x-2 pt-1">
@@ -254,7 +254,7 @@ export const HomePage = () => {
               </div>
 
               <p className="pt-2 text-sm font-bold text-amber-100">
-                A traditional taste from Tadakanapally, made to be remembered.
+                A traditional homemade taste, made to be remembered.
               </p>
             </div>
 
@@ -267,7 +267,7 @@ export const HomePage = () => {
                   className="w-full h-64 object-cover rounded-2xl"
                 />
                 <div className="p-3 text-center">
-                  <span className="text-xs font-bold text-slate-900 block">Authentic Tadakanapally Palakova</span>
+                  <span className="text-xs font-bold text-slate-900 block">Authentic Homemade Palakova</span>
                   <span className="text-[11px] text-emerald-600 font-semibold">Available for Home Delivery</span>
                 </div>
               </div>
@@ -289,7 +289,7 @@ export const HomePage = () => {
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-extrabold text-emerald-700 uppercase tracking-wider">About ASHWATH Fresh</span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900">Fresh produce with a familiar, homemade touch</h2>
-            <p className="text-sm leading-relaxed text-slate-600">We bring carefully selected fruits and vegetables to your doorstep, along with our signature traditional Palakova from Tadakanapally.</p>
+            <p className="text-sm leading-relaxed text-slate-600">We bring carefully selected fruits and vegetables to your doorstep, along with our signature traditional homemade Palakova.</p>
           </div>
         </div>
       </section>
@@ -329,7 +329,7 @@ export const HomePage = () => {
               </div>
               <h3 className="text-lg font-bold text-slate-900">Reliable Home Delivery</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Fast doorstep fruit delivery in Tadakanapally, Kurnool and Bairamalguda, Hyderabad.
+                Fast doorstep fruit delivery in Bairamalguda, Hyderabad.
               </p>
             </div>
           </div>
